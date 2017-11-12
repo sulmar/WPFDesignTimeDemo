@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFDesignTimeDemo.Views"
         xmlns:vm="clr-namespace:WPFDesignTimeDemo.ViewModels"
+        xmlns:m="clr-namespace:WPFDesignTimeDemo.Models"
         mc:Ignorable="d"
         Title="CustomersView" Height="300" Width="300"
         >
@@ -16,8 +17,23 @@
     <Window.Resources>
         <vm:MockCustomersViewModel x:Key="CustomersViewModel" />
     </Window.Resources>
-    
-    <Grid d:DataContext="{StaticResource CustomersViewModel}">
-        <DataGrid ItemsSource="{Binding Customers}" />
-    </Grid>
+
+    <StackPanel>
+        <Grid d:DataContext="{StaticResource CustomersViewModel}">
+            <DataGrid ItemsSource="{Binding Customers}" />
+        </Grid>
+
+        <Grid d:DataContext="{d:DesignInstance Type=m:Person}">
+            <StackPanel>
+                <TextBox Text="{Binding FirstName}" />
+                <TextBox Text="{Binding LastName}" />
+                <TextBox Text="{Binding Age}" />
+                <TextBox Text="{Binding PhoneNumber}" />
+            </StackPanel>
+        </Grid>
+
+    </StackPanel>
+
 </Window>
+
+    

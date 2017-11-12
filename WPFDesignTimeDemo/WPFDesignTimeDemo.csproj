@@ -58,11 +58,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DbServices\DbPersonsService.cs" />
+    <Compile Include="MockServices\MockPersonsService.cs" />
+    <Compile Include="Models\Base.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Services\IPersonsService.cs" />
     <Compile Include="ViewModels\CustomersViewModel.cs" />
+    <Compile Include="ViewModels\DesignPersonsViewModel.cs" />
     <Compile Include="ViewModels\MockCustomersViewModel.cs" />
+    <Compile Include="ViewModels\PersonsViewModel.cs" />
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonsView.xaml.cs">
+      <DependentUpon>PersonsView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +103,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\CustomersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PersonsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
